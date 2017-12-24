@@ -1,15 +1,3 @@
-# coding: utf8
-import unittest
-
-
-
-def fun(x):
-    return x + 1
-
-class MyTest(unittest.TestCase):
-    def test(self):
-        self.assertEqual(fun(3), 4)
-
 # как пользователь может найти уже ранее загруженный файл по ключу?
 class test_finding_file_by_key_form():
     def __init__(self, file_identification_key):
