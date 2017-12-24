@@ -1,7 +1,7 @@
 # coding: utf8
 import os
 from flask import Flask
-from simple_page.simple_page import simple_page
+from view.simple_page import simple_page
 
 app = Flask(__name__)
 app.register_blueprint(simple_page)
