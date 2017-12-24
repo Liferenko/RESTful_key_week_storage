@@ -16,8 +16,7 @@
     <div class="col-6">
 
       <p>
-    A simple page blueprint is registered under / and /pages
-    you can access it using this URLs:
+    Довольно простой ответ на вопрос "Каким файлообменником ты пользуешься?"
   <ul>
     <li><a href="{{ url_for('simple_page.show', page='upload') }}">Загрузка нового файла</a>
     <li><a href="{{ url_for('simple_page.show', page='success') }}">Страница залитого файла</a>
@@ -32,24 +31,24 @@
   
     </div>
     <div class="col-6">
-      <form method="GET" action="" enctype="multipart/form-data">
+      <form method="POST" action="/filestorage.py" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+        <button type="submit" class="btn btn-primary">Загрузить файл</button>
+      </form>
+      
+
+      <form method="POST" action="/filestorage.py" enctype="multipart/form-data">
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <label for="exampleInputEmail1">Введите ключ файла</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ключ вашего файла">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-          <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <button type="submit" class="btn btn-success">Найти файл по ключу</button>
+        
+    </form>  
     </div>
   
 </div>

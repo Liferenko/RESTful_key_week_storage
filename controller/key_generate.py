@@ -1,3 +1,5 @@
+# источник: https://www.palletsprojects.com/p/itsdangerous/
+
 from itsdangerous import URLSafeSerializer
 s = URLSafeSerializer('secret-key')
 s.dumps([1, 2, 3, 4])
