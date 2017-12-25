@@ -1,11 +1,16 @@
+# coding: utf8
 # источник: https://www.palletsprojects.com/p/itsdangerous/
-
+from datetime import datetime
 from itsdangerous import URLSafeSerializer
 s = URLSafeSerializer('secret-key')
-s.dumps([1, 2, 3, 4])
+time_stamp_for_key = datetime.now()
+s.dumps(time_stamp_for_key)
 
-s.loads('WzEsMiwzLDRd.wSPHqC0gR7VUqivlSukJ0IeTDgo')
-[1, 1]
+print(time_stamp_for_key)
+print(s.dumps)
 
         #генерируется уникальный ключ доступа к файлу
         # .generate_new_file_identification_key()
+        # уникальность ключа можно достичь при помощи помещения в s.dumps() серверное время загрузки файла.
+        # даже если будет дубль файла - его ключ будет уникален из-за разницы во времени
+        

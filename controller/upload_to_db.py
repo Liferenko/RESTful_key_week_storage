@@ -1,18 +1,15 @@
 # coding: utf8
 # источник - https://github.com/admiralobvious/flask-mysqldb , http://snakeproject.ru/rubric/article.php?art=python_mysql
-from filestorage import app
 from flask import request
-from flask_mysqldb import MySQL
 from werkzeug import secure_filename
-
+from filedtorage import app
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         f = request.files['the_file']
-        f.save('/var/www/uploads/' + secure_filename(f.filename))
-
-    
+        f.save('/uploads/' + secure_filename(f.filename))
+        
 # как пользователь может загрузить файл в облако?
 # class test_file_uploading_form():
         # не пустая ли форма отправки? Если ли файл?

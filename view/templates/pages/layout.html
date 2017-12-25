@@ -17,30 +17,25 @@
 
       <p>
     Довольно простой ответ на вопрос "Каким файлообменником ты пользуешься?"
+      </p>
   <ul>
     <li><a href="{{ url_for('simple_page.show', page='upload') }}">Загрузка нового файла</a>
     <li><a href="{{ url_for('simple_page.show', page='success') }}">Страница залитого файла</a>
     <li><a href="{{ url_for('simple_page.show', page='edit') }}">Страница переименовывания / удаления файла</a>
   </ul>
-  <p>
-    Also you can register the same blueprint under another path
-  <ul>
-    <li><a href="/pages/success">Страница залитого файла</a>
-    <li><a href="/pages/edit">Страница переименовывания / удаления файла</a>
-  </ul>
   
     </div>
     <div class="col-6">
-      <form method="POST" action="/filestorage.py" enctype="multipart/form-data">
+      <form method="GET" action="" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="exampleFormControlFile1">Example file input</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <label for="exampleFormControlFile1">Загрузить файл на хранение</label>
+            <input type="file" class="form-control-file" name="the_file">
           </div>
         <button type="submit" class="btn btn-primary">Загрузить файл</button>
       </form>
       
 
-      <form method="POST" action="/filestorage.py" enctype="multipart/form-data">
+      <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
           <label for="exampleInputEmail1">Введите ключ файла</label>
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ключ вашего файла">
