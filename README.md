@@ -5,7 +5,7 @@ RESTful веб-сервисы для хранения файлов с досту
 Frontend - 60%
 Backend - 1%
 
-<a href="https://keyweekstorage-liferenko1.c9users.io/" target="_blank">Demo</a>
+<a href="https://keyweekstorage-liferenko1.c9users.io/" target="_blank">Demo - keyweekstorage-liferenko1.c9users.io</a>
 
 **Функционал проекта**
 - загрузка файлов на хранение *(в разработке)*
