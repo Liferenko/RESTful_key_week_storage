@@ -1,13 +1,15 @@
 # coding: utf8
 # источник: https://www.palletsprojects.com/p/itsdangerous/
 from datetime import datetime
-from itsdangerous import URLSafeSerializer
-s = URLSafeSerializer('secret-key')
-time_stamp_for_key = datetime.now()
-s.dumps(time_stamp_for_key)
+from itsdangerous import Signer.TimestampSigner
 
-print(time_stamp_for_key)
-print(s.dumps)
+secret_key = datetime.now()
+
+
+s = TimestampSigner()
+
+print(secret_key)
+print(s)
 
         #генерируется уникальный ключ доступа к файлу
         # .generate_new_file_identification_key()
